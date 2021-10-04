@@ -1,10 +1,2 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>CCGit</title>
-  </head>
-  <body>
-    <h1>aslkdghasklj;dghal;dfhg;ldfhg;lkjsdfgpojaerngpaergpoidrg</h1>
-  </body>
-</html>
+<h1>This is a test</h1>
+<a href="/git/index.html"> go to project</a>
