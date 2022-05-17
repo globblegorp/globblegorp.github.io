@@ -1,1 +1,34 @@
-hi
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+     <meta charset="utf-8">
+     <title>oregon trail</title>
+   </head>
+   <body>
+     <script src="https://js-dos.com/cdn/js-dos-api.js"></script>
+     <script>
+       document.getElementById('zip')
+    .addEventListener('drop', event => zipUrl = URL.createObjectURL(event.dataTransfer.files[0]));
+document.getElementById('start')
+    .addEventListener('click', event => {
+        exeName = "/oregont/OREGON.EXE";
+        zipUrl =  "https://globblegorp.github.io/oregon/oregon.zip";
+        if(exeName === '' || zipUrl === '') return alert('Please enter .EXE name and .ZIP file');
+        dosbox = new Dosbox({
+            id: "dosbox",
+            onload: dosbox => dosbox.run(zipUrl, exeName),
+            onrun: (dosbox, app) => {
+                console.log("Starting: '" + app + "'");
+                document.getElementById('fullscreen').style.display = 'auto';
+            }
+        });
+        dosbox.ui.overlay.hide();
+        dosbox.ui.showLoader();
+        dosbox.downloadScript();
+    });
+document.getElementById('fullscreen')
+    .addEventListener('click', event => dosbox.requestFullScreen());
+     </script>
+     oregon trail
+   </body>
+</html>
